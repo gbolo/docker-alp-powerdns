@@ -13,9 +13,11 @@ the following backend modules are compiled in:
 ## run with config file:
 This container will not run without a config file. Create one and supply it during runtime.
 ```
-docker run --name powerdns \
+docker run -d --name powerdns \
   -v /local/path/pdns.conf:/usr/local/etc/pdns.conf:ro \
   -p 53:53 \
   -p 53:53/udp \
+  -p 8081:8081 \
   gbolo/powerdns
 ```
+version **4.0.0-rc2** also available for testing with this image: `gbolo/powerdns:4.0.0-rc2`
