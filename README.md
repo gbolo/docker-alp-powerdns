@@ -16,5 +16,6 @@ This container will not run without a config file. Create one and supply it duri
 docker run --name powerdns \
   -v /local/path/pdns.conf:/usr/local/etc/pdns.conf:ro \
   -p 53:53 \
+  -p 53:53/udp \
   gbolo/powerdns
 ```
