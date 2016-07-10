@@ -21,3 +21,26 @@ docker run -d --name powerdns \
   gbolo/powerdns
 ```
 version **4.0.0-rc2** also available for testing with this image: `gbolo/powerdns:4.0.0-rc2`
+
+## example config
+pdns.conf
+```
+### Backend config
+launch=gmysql
+gmysql-host=10.x.x.x
+gmysql-dbname=powerdns
+gmysql-user=powerdns
+gmysql-password=powerdns
+gmysql-port=3306
+
+### REST API (3.x)
+experimental-json-interface=yes
+experimental-api-key=changeme
+webserver=yes
+webserver-address=0.0.0.0
+
+### OTHER
+default-soa-name=ns.example.com
+default-soa-mail=root.example.com
+
+```
